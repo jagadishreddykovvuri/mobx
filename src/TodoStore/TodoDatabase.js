@@ -12,5 +12,8 @@ class TodoDatabase {
     this.todos.push(new Todo(this, this.id, task, false));
     console.log(this.todos);
   }
+  @action.bound onClearCompletedTask() {
+    this.todos = this.todos.filter(todo => !todo.taskStatus);
+  }
 }
 export default TodoDatabase;

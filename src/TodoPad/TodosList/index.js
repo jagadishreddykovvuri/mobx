@@ -21,7 +21,7 @@ class TodoList extends Component {
     if (todoList.length > 0) {
       return (
         <TodoFooter
-          todoList={this.props.todoList}
+          todoDatabase={this.props.todoDatabase}
           onChangeFilterType={this.onChangeFilterType}
           onClearCompletedTask={this.props.onClearCompletedTask}
           applyedFliterType={this.state.applyedFliterType}

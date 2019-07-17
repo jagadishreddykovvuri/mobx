@@ -12,7 +12,7 @@ class TodoFooter extends Component {
     this.props.onChangeFilterType("Completed");
   };
   handleClear = () => {
-    this.props.onClearCompletedTask();
+    this.props.todoDatabase.onClearCompletedTask();
   };
   filterDiv = () => {
     return (
