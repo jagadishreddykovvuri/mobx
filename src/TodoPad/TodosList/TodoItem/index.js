@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import "./styles.css";
 import EnterTodo from "../../EnterTodo";
 import TaskItem from "./TaskItem";
+import { observer } from "mobx-react";
 
+@observer
 class TodoItem extends Component {
   constructor(props) {
     super(props);
@@ -15,7 +17,7 @@ class TodoItem extends Component {
   };
   onDelete = () => {
     if (window.confirm("you to want delete task ? " + this.props.item.task)) {
-      this.props.onDeleteItem(this.props.item);
+      this.props.item.onDelete();
     }
   };
   onDoubleClick = () => {

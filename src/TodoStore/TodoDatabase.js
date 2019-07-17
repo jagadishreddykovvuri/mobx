@@ -9,7 +9,7 @@ class TodoDatabase {
   @observable todos = [];
   @action addTodo(task) {
     this.id = this.id + 1;
-    this.todos.push(new Todo(this.id, task, false));
+    this.todos.push(new Todo(this, this.id, task, false));
     console.log(this.todos);
   }
 }
