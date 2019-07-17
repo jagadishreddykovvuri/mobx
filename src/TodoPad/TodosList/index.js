@@ -45,7 +45,6 @@ class TodoList extends Component {
           return (
             <TodoItem
               todoDatabase={this.props.todoDatabase}
-              todo={todo}
               key={item.id}
               item={item}
               onToggleTaskDone={this.props.onToggleTaskDone}

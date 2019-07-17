@@ -15,11 +15,8 @@ class TodoPad extends Component {
   onAddTodo = value => {
     value = value.replace(/^\s+/g, "");
     if (value !== "") {
-      this.randomId = this.randomId + 1;
-      const todo = { id: this.randomId, task: value, taskStatus: false };
-      this.setState({
-        todoList: this.state.todoList.concat(todo)
-      });
+      console.log(1);
+      this.props.todoDatabase.addtodo(value);
     }
   };
   onToggleTaskDone = item => {
@@ -57,7 +54,6 @@ class TodoPad extends Component {
     }
   };
   render() {
-    var { todoDatabase, todo } = this.props;
     console.log(this.props.todoDatabase.todos.length);
     return (
       <div className="background">
@@ -65,14 +61,13 @@ class TodoPad extends Component {
           <h1 className="heading">Todos</h1>
           <div class="stack-shadow">
             <EnterTodo
-              onPressEnter={this.onAddTodo}
-              todoDatabase={todoDatabase}
+              onPressEnter={this.props.todoDatabase.addTodo}
+              todoDatabase={this.props.todoDatabase}
               task=""
             />
 
             <TodoList
-              todoDatabase={todoDatabase}
-              todo={todo}
+              todoDatabase={this.props.todoDatabase}
               onToggleTaskDone={this.onToggleTaskDone}
               onDeleteItem={this.onDeleteItem}
               onClearCompletedTask={this.onClearCompletedTask}

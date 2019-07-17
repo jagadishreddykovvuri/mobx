@@ -21,5 +21,8 @@ class Todo {
     console.log(1);
     this.store.todos.remove(this);
   }
+  @action.bound onUpdate(task) {
+    this.task = task;
+  }
 }
 export default Todo;

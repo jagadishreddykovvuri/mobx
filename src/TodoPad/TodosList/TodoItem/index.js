@@ -26,7 +26,7 @@ class TodoItem extends Component {
     });
   };
   onUpdate = task => {
-    this.props.onUpdateTask(this.props.item, task);
+    this.props.item.onUpdate(task);
     this.setState({
       isDoubleClick: false
     });
