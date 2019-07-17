@@ -1,0 +1,11 @@
+.clickable {
+  cursor: pointer;
+}
+.blur {
+  color: #888888;
+}
+.check-box-size {
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+}

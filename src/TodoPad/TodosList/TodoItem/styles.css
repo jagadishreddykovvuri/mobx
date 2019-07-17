@@ -1,0 +1,58 @@
+.todo-back {
+  width: 100%;
+  height: 60px;
+  margin-top: 3px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  --v: hidden;
+}
+.checkWithItem {
+  display: flex;
+  align-items: center;
+}
+.removeIcon {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  visibility: var(--v);
+}
+.round {
+  width: 30px;
+  height: 30px;
+}
+.todo-back:hover {
+  --v: visible;
+}
+.taskStyle {
+  height: 30px;
+  font-size: 25px;
+  font-family: "Courier New", Courier, monospace;
+  padding: 16px 16px 16px 0px;
+  border: none;
+}
+.blur {
+  color: #888888;
+}
+.check-box-size {
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid green;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.clickable {
+  cursor: pointer;
+}

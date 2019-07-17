@@ -1,0 +1,14 @@
+.inputTag {
+  width: 89%;
+  height: 30px;
+  font-size: 25px;
+  font-family: "Courier New", Courier, monospace;
+  padding: 16px 16px 16px 60px;
+  border: none;
+  background: white;
+  box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.03);
+}
+.padding-gap {
+  padding: 16px 16px 16px 0px;
+  width: 600px;
+}

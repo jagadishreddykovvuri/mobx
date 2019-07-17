@@ -1,0 +1,30 @@
+.footer-back {
+  height: 30px;
+  background-color: white;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #777777;
+  font-size: 14px;
+  padding: 10px;
+}
+.list-loader {
+  width: 230px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.border {
+  border: 2px solid rgba(175, 47, 47, 0.2);
+  border-radius: 7px;
+}
+.onhover:hover {
+  text-decoration: underline;
+}
+.clickable {
+  padding: 3px;
+  cursor: pointer;
+}
