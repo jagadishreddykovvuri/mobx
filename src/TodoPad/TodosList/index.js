@@ -4,6 +4,7 @@ import TodoItem from "./TodoItem";
 import TodoFooter from "./TodoFooter";
 import filtersOfTodoList from "../constant";
 import { observer } from "mobx-react";
+import { observable } from "rxjs";
 @observer
 class TodoList extends Component {
   constructor(props) {
@@ -13,6 +14,7 @@ class TodoList extends Component {
     };
   }
   onChangeFilterType = filterValue => {
+    this.props.todoDatabase.onChangeFilterType(filterValue);
     this.setState({
       applyedFliterType: filterValue
     });
@@ -24,7 +26,7 @@ class TodoList extends Component {
         <TodoFooter
           todoDatabase={this.props.todoDatabase}
           onChangeFilterType={this.onChangeFilterType}
-          applyedFliterType={this.state.applyedFliterType}
+          applyedFliterType={this.props.todoDatabase.applyedFliterType}
           unDoneLeft={this.props.todoDatabase.calUndoneLeft}
         />
       );

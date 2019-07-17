@@ -3,9 +3,11 @@ import "./styles.css";
 import EnterTodo from "../../EnterTodo";
 import TaskItem from "./TaskItem";
 import { observer } from "mobx-react";
+import { observable } from "mobx";
 
 @observer
 class TodoItem extends Component {
+  @observable isDoubleClick = false;
   constructor(props) {
     super(props);
     this.state = {
@@ -21,23 +23,20 @@ class TodoItem extends Component {
     }
   };
   onDoubleClick = () => {
+    this.isDoubleClick = true;
     this.setState({
       isDoubleClick: true
     });
   };
   onUpdate = task => {
     this.props.item.onUpdate(task);
-    this.setState({
-      isDoubleClick: false
-    });
+    this.isDoubleClick = false;
   };
   handleBlur = () => {
-    this.setState({
-      isDoubleClick: false
-    });
+    this.isDoubleClick = true;
   };
   task = () => {
-    return this.state.isDoubleClick ? (
+    return this.isDoubleClick ? (
       <EnterTodo
         onBlur={this.handleBlur}
         onPressEnter={this.onUpdate}

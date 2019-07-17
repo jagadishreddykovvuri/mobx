@@ -7,6 +7,7 @@ import Todo from "./Todo";
 class TodoDatabase {
   id = 0;
   @observable todos = [];
+  @observable applyedFliterType = "All";
   @action.bound addTodo(task) {
     this.id = this.id + 1;
     this.todos.push(new Todo(this, this.id, task, false));
@@ -17,6 +18,9 @@ class TodoDatabase {
   }
   @computed get calUndoneLeft() {
     return this.todos.filter(item => !item.taskStatus).length;
+  }
+  @action.bound onChangeFilterType(value) {
+    this.applyedFliterType = value;
   }
 }
 export default TodoDatabase;
