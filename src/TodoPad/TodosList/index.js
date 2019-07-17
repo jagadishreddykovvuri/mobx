@@ -3,6 +3,8 @@ import "./styles.css";
 import TodoItem from "./TodoItem";
 import TodoFooter from "./TodoFooter";
 import filtersOfTodoList from "../constant";
+import { observer } from "mobx-react";
+@observer
 class TodoList extends Component {
   constructor(props) {
     super(props);
@@ -17,15 +19,13 @@ class TodoList extends Component {
   };
   footer = () => {
     let todoList = this.props.todoDatabase.todos;
-    let unDoneLeft = todoList.filter(item => !item.taskStatus);
     if (todoList.length > 0) {
       return (
         <TodoFooter
           todoDatabase={this.props.todoDatabase}
           onChangeFilterType={this.onChangeFilterType}
-          onClearCompletedTask={this.props.onClearCompletedTask}
           applyedFliterType={this.state.applyedFliterType}
-          unDoneLeft={unDoneLeft.length}
+          unDoneLeft={this.props.todoDatabase.calUndoneLeft}
         />
       );
     }

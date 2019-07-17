@@ -15,5 +15,8 @@ class TodoDatabase {
   @action.bound onClearCompletedTask() {
     this.todos = this.todos.filter(todo => !todo.taskStatus);
   }
+  @computed get calUndoneLeft() {
+    return this.todos.filter(item => !item.taskStatus).length;
+  }
 }
 export default TodoDatabase;
