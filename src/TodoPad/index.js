@@ -5,7 +5,9 @@ import TodoList from "./TodosList";
 import { observer } from "mobx-react";
 @observer
 class TodoPad extends Component {
-  constructor(props) {}
+  constructor(props) {
+    super(props);
+  }
   render() {
     console.log(this.props.todoDatabase.todos.length);
     return (
